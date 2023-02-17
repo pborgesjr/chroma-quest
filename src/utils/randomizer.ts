@@ -1,6 +1,4 @@
-//TODO: passar para constants
-const DEFAULT_MIN_VALUE = 1;
-const DEFAULT_MAX_VALUE = 4;
+import {DEFAULT_MAX_VALUE, DEFAULT_MIN_VALUE} from '../constants';
 
 export const randomNumber = (
   min: number = DEFAULT_MIN_VALUE,

@@ -21,9 +21,11 @@ export const useGameValues = () => {
 
   useEffect(() => {
     if (gameState === 'computer') {
-      const nextRandomNumber = randomNumber();
-      setGameValues(prevState => [...prevState, nextRandomNumber]);
-      setGameState('playing');
+      setTimeout(() => {
+        const nextRandomNumber = randomNumber();
+        setGameValues(prevState => [...prevState, nextRandomNumber]);
+        setGameState('playing');
+      }, 1000);
     }
   }, [gameState, setGameState, setGameValues]);
 

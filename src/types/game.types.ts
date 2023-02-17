@@ -15,3 +15,5 @@ export type GameStateType =
   | 'waiting'
   | 'paused'
   | 'computer';
+
+export type ValueColorType = 1 | 2 | 3 | 4;
