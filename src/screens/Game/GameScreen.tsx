@@ -1,21 +1,19 @@
-import React, {useContext, useRef} from 'react';
+import React, {useContext} from 'react';
 import {Text, View} from 'react-native';
-import {ColorButtonRefType, ColorValueButton} from '../../components';
+import {ColorValueButton} from '../../components';
 import {GameContext} from '../../context';
 import {useGameValues} from '../../hooks';
+import {useButtonsRefs} from '../../hooks/useButtonsRefs';
 import {ValueColorType} from '../../types';
 
 export const Game = () => {
-  const firstButtonRef = useRef<ColorButtonRefType>(null);
-  const secondButtonRef = useRef<ColorButtonRefType>(null);
-  const thirdButtonRef = useRef<ColorButtonRefType>(null);
-  const fourthButtonRef = useRef<ColorButtonRefType>(null);
-  const buttonsRefs = [
+  const {
+    buttonsRefs,
     firstButtonRef,
+    fourthButtonRef,
     secondButtonRef,
     thirdButtonRef,
-    fourthButtonRef,
-  ];
+  } = useButtonsRefs();
 
   const {gameValues, userGameValues, setUserGameValues} =
     useGameValues(buttonsRefs);

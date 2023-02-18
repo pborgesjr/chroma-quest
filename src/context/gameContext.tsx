@@ -21,7 +21,7 @@ export const GameContext = createContext<GameContextType>(
 );
 
 export const GameProvider = ({children}: GameProviderProps) => {
-  const [gameState, setGameState] = useState<GameStateType>('waiting');
+  const [gameState, setGameState] = useState<GameStateType>('computer');
 
   return (
     <GameContext.Provider value={{gameState, setGameState}}>

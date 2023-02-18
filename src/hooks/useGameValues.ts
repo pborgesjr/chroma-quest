@@ -22,7 +22,7 @@ export const useGameValues = (
   const restartGame = () => {
     setUserGameValues([]);
     setGameValues([]);
-    setGameState('waiting');
+    setGameState('computer');
   };
 
   const handleDefeat = () => {
