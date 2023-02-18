@@ -1,27 +1,58 @@
-import React, {useContext} from 'react';
+import React, {useContext, useRef} from 'react';
 import {Text, View} from 'react-native';
-import {ColorValueButton} from '../../components';
+import {ColorButtonRefType, ColorValueButton} from '../../components';
 import {GameContext} from '../../context';
 import {useGameValues} from '../../hooks';
 import {ValueColorType} from '../../types';
 
 export const Game = () => {
-  const {gameValues, userGameValues, setUserGameValues} = useGameValues();
+  const firstButtonRef = useRef<ColorButtonRefType>(null);
+  const secondButtonRef = useRef<ColorButtonRefType>(null);
+  const thirdButtonRef = useRef<ColorButtonRefType>(null);
+  const fourthButtonRef = useRef<ColorButtonRefType>(null);
+  const buttonsRefs = [
+    firstButtonRef,
+    secondButtonRef,
+    thirdButtonRef,
+    fourthButtonRef,
+  ];
+
+  const {gameValues, userGameValues, setUserGameValues} =
+    useGameValues(buttonsRefs);
   const {gameState} = useContext(GameContext);
 
   const handlePress = (value: ValueColorType) => {
     setUserGameValues(prevState => [...prevState, value]);
   };
 
-  //TODO: controlar o gameState para impedir jogadas erradas
-  const isButtonDisabled = false;
+  const isButtonDisabled = gameState !== 'user';
 
   return (
-    <View>
-      <ColorValueButton onPress={handlePress} value={1} />
-      <ColorValueButton onPress={handlePress} value={2} />
-      <ColorValueButton onPress={handlePress} value={3} />
-      <ColorValueButton onPress={handlePress} value={4} />
+    <View style={{backgroundColor: '#333', height: '100%'}}>
+      <ColorValueButton
+        onPress={handlePress}
+        value={1}
+        isDisabled={isButtonDisabled}
+        ref={firstButtonRef}
+      />
+      <ColorValueButton
+        onPress={handlePress}
+        value={2}
+        isDisabled={isButtonDisabled}
+        ref={secondButtonRef}
+      />
+      <ColorValueButton
+        onPress={handlePress}
+        value={3}
+        isDisabled={isButtonDisabled}
+        ref={thirdButtonRef}
+      />
+      <ColorValueButton
+        onPress={handlePress}
+        value={4}
+        isDisabled={isButtonDisabled}
+        ref={fourthButtonRef}
+      />
 
       <Text>Gabarito: {gameValues}</Text>
       <Text>user: {userGameValues}</Text>
