@@ -1,6 +1,6 @@
 import React, {memo, forwardRef, useState, useImperativeHandle} from 'react';
 import {Svg, Path} from 'react-native-svg';
-import {Text, Pressable} from 'react-native';
+import {Text, Pressable, Vibration} from 'react-native';
 import {COLOR_PALETTE} from '../../theme';
 import {ValueColorType} from '../../types';
 import {delay} from 'lodash';
@@ -29,14 +29,15 @@ const ColorValueButtonComponent = forwardRef(
 
     const [isLit, setIsLit] = useState(false);
 
-    const handleLitButton = (time: number = LIT_ANIMATION_DURATION) => {
+    const handleLitButton = (time: number) => {
       setIsLit(true);
       delay(() => setIsLit(false), time);
     };
 
     const handlePress = () => {
       onPress?.(value);
-      handleLitButton();
+      Vibration.vibrate(LIT_ANIMATION_DURATION);
+      handleLitButton(LIT_ANIMATION_DURATION);
     };
 
     const replayAnimation = () => {
