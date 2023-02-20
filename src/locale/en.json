@@ -1,0 +1,26 @@
+{
+    "language": "language",
+    "english": "english",
+    "brazilianPortuguese": "brazilian portuguese",
+
+    "difficulty": "difficulty",
+    "accessibility": "accessibility",
+    "scoreboard": "scoreboard",
+    "about": "about",
+    "settings": "settings",
+
+
+    "easy": "easy",
+    "normal": "normal",
+    "hard": "hard",
+
+    "showNumbers": "show numbers",
+    "insteadOfColors": "Instead of colors, each button will show a number between 1 and 4",
+    "aboutTheGame": "This game was designed and developed by Pedro Borges",
+    "github": "github",
+    "linkedin": "linkedin",
+    "pause": "pause",
+    "gameIsPaused": "Game is paused",
+    "continue": "continue",
+    "restart": "restart"
+}
