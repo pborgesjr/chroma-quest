@@ -1,9 +1,7 @@
 import React, {useContext} from 'react';
-import {Text} from 'react-native';
-import {ColorValueButton, Container} from '../../components';
+import {ColorValueButton, Container, Typography} from '../../components';
 import {GameContext} from '../../context';
-import {useGameValues} from '../../hooks';
-import {useButtonsRefs} from '../../hooks/useButtonsRefs';
+import {useGameValues, useButtonsRefs} from '../../hooks';
 import {ValueColorType} from '../../types';
 
 export const GameScreen = () => {
@@ -53,9 +51,20 @@ export const GameScreen = () => {
           ref={fourthButtonRef}
         />
 
-        <Text>Gabarito: {gameValues}</Text>
-        <Text>user: {userGameValues}</Text>
-        <Text>GameState: {gameState}</Text>
+        <Typography
+          text={`Gabarito: ${gameValues}`}
+          variation="smallDescription"
+        />
+        <Typography
+          text={`User: ${userGameValues}`}
+          shadow
+          variation="smallDescription"
+        />
+        <Typography
+          text={`GameState: ${gameState}`}
+          theme="dark"
+          variation="smallDescription"
+        />
       </>
     </Container>
   );

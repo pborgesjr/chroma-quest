@@ -29,4 +29,5 @@ export const COLOR_PALETTE = {
       secondary: '#bdc400',
     },
   },
+  shadow: '#00000073',
 };
