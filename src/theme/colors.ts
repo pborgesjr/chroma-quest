@@ -1,4 +1,11 @@
 export const COLOR_PALETTE = {
+  gradient: {
+    normal: {
+      pink: '#B661D4',
+      purple: '#72509D',
+      darkPurple: '#240924',
+    },
+  },
   neutral: {
     white: '#fff',
     whitec4: '#c4c4c4',
