@@ -1,5 +1,11 @@
 import React, {useContext} from 'react';
-import {ColorValueButton, Container, Typography} from '../../components';
+import {View} from 'react-native';
+import {
+  Button,
+  ColorValueButton,
+  Container,
+  Typography,
+} from '../../components';
 import {GameContext} from '../../context';
 import {useGameValues, useButtonsRefs} from '../../hooks';
 import {ValueColorType} from '../../types';
@@ -26,29 +32,41 @@ export const GameScreen = () => {
   return (
     <Container>
       <>
-        <ColorValueButton
-          onPress={handlePress}
-          value={1}
-          isDisabled={isButtonDisabled}
-          ref={firstButtonRef}
-        />
-        <ColorValueButton
-          onPress={handlePress}
-          value={2}
-          isDisabled={isButtonDisabled}
-          ref={secondButtonRef}
-        />
-        <ColorValueButton
-          onPress={handlePress}
-          value={3}
-          isDisabled={isButtonDisabled}
-          ref={thirdButtonRef}
-        />
-        <ColorValueButton
-          onPress={handlePress}
-          value={4}
-          isDisabled={isButtonDisabled}
-          ref={fourthButtonRef}
+        <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
+          <View>
+            <ColorValueButton
+              onPress={handlePress}
+              value={1}
+              isDisabled={isButtonDisabled}
+              ref={firstButtonRef}
+            />
+            <ColorValueButton
+              onPress={handlePress}
+              value={2}
+              isDisabled={isButtonDisabled}
+              ref={secondButtonRef}
+            />
+          </View>
+          <View>
+            <ColorValueButton
+              onPress={handlePress}
+              value={3}
+              isDisabled={isButtonDisabled}
+              ref={thirdButtonRef}
+            />
+            <ColorValueButton
+              onPress={handlePress}
+              value={4}
+              isDisabled={isButtonDisabled}
+              ref={fourthButtonRef}
+            />
+          </View>
+        </View>
+
+        <Button
+          onPress={() => {}}
+          showBorder
+          textProps={{text: 'show numbers', shadow: true}}
         />
 
         <Typography

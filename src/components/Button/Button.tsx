@@ -1,26 +1,37 @@
 import React from 'react';
-import {
-  ButtonProps as RNButtonProps,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import {StyleSheet, TouchableOpacity, View, ViewStyle} from 'react-native';
+import {Typography, TypographyProps} from '../Typography/Typography';
 
-interface ButtonProps extends Omit<RNButtonProps, 'onPress'> {
-  value: number;
-  onPress: (value: number) => void;
-}
+import {styles} from './styles';
 
-export const Button = ({title, value, onPress, ...rest}: ButtonProps) => {
-  const handlePress = () => {
-    onPress(value);
-  };
+export type ButtonProps = {
+  onPress: () => void;
+  testID?: string;
+  buttonStyle?: ViewStyle;
+  textProps: TypographyProps;
+  showBorder?: boolean;
+};
+
+export const Button = ({
+  onPress,
+  testID,
+  buttonStyle,
+  textProps,
+  showBorder,
+}: ButtonProps) => {
+  const customButtonStyles = StyleSheet.flatten([
+    showBorder && styles.border,
+    buttonStyle,
+  ]);
 
   return (
-    <TouchableOpacity
-      {...rest}
-      onPress={handlePress}
-      style={{padding: 20, backgroundColor: 'red', marginBottom: 20}}>
-      <Text>{title}</Text>
-    </TouchableOpacity>
+    <View style={styles.container}>
+      <TouchableOpacity
+        onPress={onPress}
+        style={customButtonStyles}
+        testID={testID}>
+        <Typography textStyle={styles.text} {...textProps} />
+      </TouchableOpacity>
+    </View>
   );
 };
