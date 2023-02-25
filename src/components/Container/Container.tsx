@@ -21,12 +21,12 @@ export const Container = ({
   showCustomHeader,
   children,
 }: ContainerProps) => {
-  const {top} = useSafeAreaInsets();
+  const {top, bottom} = useSafeAreaInsets();
 
   return (
     <LinearGradient colors={[darkPurple, purple, pink]} style={styles.gradient}>
-      <View style={{paddingTop: top}}>
-        {/*  <StatusBar
+      <View style={{marginTop: top, marginBottom: bottom, flex: 1}}>
+        {/* <StatusBar
           backgroundColor="transparent"
           translucent
           barStyle="light-content"

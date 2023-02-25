@@ -1,1 +1,8 @@
-export const testIDs = {};
+export const testIDs = {
+  screens: {
+    about: {
+      aboutTheGame: 'lblAboutDescription',
+      heartImage: 'imgHeart',
+    },
+  },
+};

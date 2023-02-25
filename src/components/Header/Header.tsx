@@ -1,8 +1,10 @@
 import React from 'react';
 import {View} from 'react-native';
-import {scale} from '../../utils';
+
 import {Button} from '../Button/Button';
 import {Typography} from '../Typography/Typography';
+
+import {styles} from './styles';
 
 type HeaderProps = {
   title?: string;
@@ -11,18 +13,17 @@ type HeaderProps = {
 
 export const Header = ({title = '', onPress = () => {}}: HeaderProps) => {
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        paddingVertical: scale(24),
-        marginHorizontal: scale(16),
-      }}>
+    <View style={styles.container}>
       <Button
-        textProps={{text: '<'}}
+        textProps={{text: '<', variation: 'title'}}
         onPress={onPress}
-        buttonStyle={{marginRight: scale(24)}}
+        buttonStyle={styles.button}
       />
-      <Typography text={title} />
+      <Typography
+        text={title}
+        variation="heading"
+        containerStyle={styles.titleContainer}
+      />
     </View>
   );
 };

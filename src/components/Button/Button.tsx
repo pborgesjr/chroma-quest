@@ -30,7 +30,7 @@ export const Button = ({
         onPress={onPress}
         style={customButtonStyles}
         testID={testID}>
-        <Typography textStyle={styles.text} {...textProps} />
+        <Typography {...textProps} />
       </TouchableOpacity>
     </View>
   );
