@@ -15,4 +15,4 @@ export const screens = [
       headerShown: false,
     },
   },
-];
+] as const;

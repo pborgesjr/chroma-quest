@@ -1,17 +1,21 @@
 import React from 'react';
 import {Image, View} from 'react-native';
+import {useTranslation} from 'react-i18next';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {Typography, Button, Container} from '../../components';
+import {RootStackParamList, RouteName} from '../../types';
 import {Images} from '../../assets';
+
+import {styles} from './styles';
 
 const {Logo} = Images;
 
-import {styles} from './styles';
-import {useTranslation} from 'react-i18next';
-//TODO: fix screen type
-export const HomeScreen = ({navigation}) => {
+type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
+
+export const HomeScreen = ({navigation}: HomeScreenProps) => {
   const {t} = useTranslation();
 
-  const handleNavigate = (destination: string) => {
+  const handleNavigate = (destination: RouteName) => {
     navigation.navigate(destination);
   };
   return (
