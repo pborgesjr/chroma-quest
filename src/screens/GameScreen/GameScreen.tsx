@@ -63,7 +63,7 @@ export const GameScreen = () => {
           </View>
         </View>
 
-        <Button
+        {/*   <Button
           onPress={() => {}}
           showBorder
           textProps={{text: 'show numbers', shadow: true}}
@@ -82,7 +82,7 @@ export const GameScreen = () => {
           text={`GameState: ${gameState}`}
           theme="dark"
           variation="smallDescription"
-        />
+        /> */}
       </>
     </Container>
   );
