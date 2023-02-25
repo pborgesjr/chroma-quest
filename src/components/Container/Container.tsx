@@ -26,11 +26,11 @@ export const Container = ({
   return (
     <LinearGradient colors={[darkPurple, purple, pink]} style={styles.gradient}>
       <View style={{paddingTop: top}}>
-        <StatusBar
+        {/*  <StatusBar
           backgroundColor="transparent"
           translucent
           barStyle="light-content"
-        />
+        /> */}
         {showCustomHeader ? <Header title={title} onPress={onPress} /> : <></>}
 
         {children}

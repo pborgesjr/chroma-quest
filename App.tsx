@@ -1,6 +1,7 @@
-import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native';
+
 import {GameProvider} from './src/context';
 import {StackNavigator} from './src/routes';
 

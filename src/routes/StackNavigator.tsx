@@ -8,6 +8,7 @@ export const StackNavigator = () => {
 
   return (
     <Stack.Navigator
+      initialRouteName="Home"
       screenOptions={{
         /**TODO: remover Header de dentro de Container e utilizar por aqui. Renderizar através do headerShown. Props serão passadas via navigation.setOptions */
         headerTransparent: true,
