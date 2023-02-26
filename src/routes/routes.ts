@@ -1,13 +1,6 @@
-import {AboutScreen, GameScreen, HomeScreen} from '../screens';
+import {AboutScreen, GameScreen, HomeScreen, SettingsScreen} from '../screens';
 
 export const screens = [
-  {
-    name: 'Game',
-    component: GameScreen,
-    options: {
-      headerShown: false,
-    },
-  },
   {
     name: 'Home',
     component: HomeScreen,
@@ -16,8 +9,22 @@ export const screens = [
     },
   },
   {
+    name: 'Game',
+    component: GameScreen,
+    options: {
+      headerShown: false,
+    },
+  },
+  {
     name: 'About',
     component: AboutScreen,
+    options: {
+      headerShown: false,
+    },
+  },
+  {
+    name: 'Settings',
+    component: SettingsScreen,
     options: {
       headerShown: false,
     },

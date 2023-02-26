@@ -6,8 +6,10 @@ export const styles = StyleSheet.create({
   container: {
     alignItems: 'flex-start',
   },
-  border: {
+  button: {
     padding: scale(8),
+  },
+  border: {
     borderWidth: scale(3),
     borderColor: COLOR_PALETTE.neutral.white,
   },

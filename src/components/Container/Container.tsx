@@ -25,12 +25,12 @@ export const Container = ({
 
   return (
     <LinearGradient colors={[darkPurple, purple, pink]} style={styles.gradient}>
-      <View style={{marginTop: top, marginBottom: bottom, flex: 1}}>
-        {/* <StatusBar
+      <View style={{paddingTop: top, paddingBottom: bottom, flex: 1}}>
+        <StatusBar
           backgroundColor="transparent"
           translucent
           barStyle="light-content"
-        /> */}
+        />
         {showCustomHeader ? <Header title={title} onPress={onPress} /> : <></>}
 
         {children}

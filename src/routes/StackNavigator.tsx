@@ -15,6 +15,7 @@ export const StackNavigator = () => {
         headerTransparent: true,
       }}>
       {screens.map(screen => (
+        //TODO: fix type
         <Stack.Screen key={screen.name} {...screen} />
       ))}
     </Stack.Navigator>

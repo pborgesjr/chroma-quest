@@ -20,6 +20,7 @@ export const Button = ({
   showBorder,
 }: ButtonProps) => {
   const customButtonStyles = StyleSheet.flatten([
+    styles.button,
     showBorder && styles.border,
     buttonStyle,
   ]);
