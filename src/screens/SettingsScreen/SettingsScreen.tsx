@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {useTranslation} from 'react-i18next';
 import {StyleSheet, View} from 'react-native';
-import {Button, Container, Typography} from '../../components';
+import {Button, Typography} from '../../components';
 import {get, set} from '../../storage';
 import {OptionType, RootStackParamList} from '../../types';
 
@@ -72,19 +72,20 @@ export const SettingsScreen = ({navigation, route}: SettingsScreenProps) => {
     }
   }, [storageKey]);
 
+  useEffect(() => {
+    navigation.setOptions({
+      title: t('settings'),
+    });
+  }, [navigation]);
+
   return (
-    <Container
-      showCustomHeader
-      title={t('settings')}
-      onPress={navigation.goBack}>
-      <View style={styles.container}>
-        <View>
-          {options.map((option, index) =>
-            renderOption(option, index + 1 === options.length),
-          )}
-        </View>
-        {renderDescription()}
+    <View style={styles.container}>
+      <View>
+        {options.map((option, index) =>
+          renderOption(option, index + 1 === options.length),
+        )}
       </View>
-    </Container>
+      {renderDescription()}
+    </View>
   );
 };

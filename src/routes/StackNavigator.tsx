@@ -1,6 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {Header, Typography} from '../components';
+import {Container, Header} from '../components';
 import {RootStackParamList} from '../types';
 import {screens} from './routes';
 
@@ -11,12 +11,23 @@ export const StackNavigator = () => {
     <Stack.Navigator
       initialRouteName="Home"
       screenOptions={{
-        /**TODO: remover Header de dentro de Container e utilizar por aqui. Renderizar através do headerShown. Props serão passadas via navigation.setOptions */
         headerTransparent: true,
+        header: ({navigation, route}) => (
+          <Header title={route.name} onPress={navigation.goBack} />
+        ),
       }}>
       {screens.map(screen => (
-        //TODO: fix type
-        <Stack.Screen key={screen.name} {...screen} />
+        <Stack.Screen
+          key={screen.name}
+          {...screen}
+          component={undefined}
+          children={props => (
+            <Container>
+              {/**TODO: fix type */}
+              <screen.component {...props} />
+            </Container>
+          )}
+        />
       ))}
     </Stack.Navigator>
   );

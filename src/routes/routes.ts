@@ -19,7 +19,7 @@ export const screens = [
     name: 'About',
     component: AboutScreen,
     options: {
-      headerShown: false,
+      headerShown: true,
     },
   },
   {

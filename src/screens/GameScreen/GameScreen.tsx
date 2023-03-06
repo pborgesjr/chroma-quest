@@ -1,12 +1,7 @@
 import React, {useContext} from 'react';
 import {View, Image} from 'react-native';
 
-import {
-  Button,
-  ColorValueButton,
-  Container,
-  Typography,
-} from '../../components';
+import {Button, ColorValueButton, Typography} from '../../components';
 import {GameContext} from '../../context';
 import {useGameValues, useButtonsRefs} from '../../hooks';
 import {ValueColorType} from '../../types';
@@ -42,60 +37,58 @@ export const GameScreen = () => {
   const isButtonDisabled = gameState !== 'user';
 
   return (
-    <Container>
-      <View style={styles.wrapper}>
-        <View style={styles.alignItemsCenter}>
-          <Button
-            textProps={{text: t('pause'), variation: 'heading'}}
-            onPress={handlePause}
-          />
-          <View style={styles.buttonsContainer}>
-            <View style={[styles.marginRight, styles.marginBottom]}>
-              <ColorValueButton
-                onPress={handlePress}
-                value={1}
-                isDisabled={isButtonDisabled}
-                ref={firstButtonRef}
-              />
-            </View>
-            <View>
-              <ColorValueButton
-                onPress={handlePress}
-                value={2}
-                isDisabled={isButtonDisabled}
-                ref={secondButtonRef}
-              />
-            </View>
+    <View style={styles.wrapper}>
+      <View style={styles.alignItemsCenter}>
+        <Button
+          textProps={{text: t('pause'), variation: 'heading'}}
+          onPress={handlePause}
+        />
+        <View style={styles.buttonsContainer}>
+          <View style={[styles.marginRight, styles.marginBottom]}>
+            <ColorValueButton
+              onPress={handlePress}
+              value={1}
+              isDisabled={isButtonDisabled}
+              ref={firstButtonRef}
+            />
+          </View>
+          <View>
+            <ColorValueButton
+              onPress={handlePress}
+              value={2}
+              isDisabled={isButtonDisabled}
+              ref={secondButtonRef}
+            />
+          </View>
 
-            <View style={styles.marginRight}>
-              <ColorValueButton
-                onPress={handlePress}
-                value={3}
-                isDisabled={isButtonDisabled}
-                ref={thirdButtonRef}
-              />
-            </View>
+          <View style={styles.marginRight}>
+            <ColorValueButton
+              onPress={handlePress}
+              value={3}
+              isDisabled={isButtonDisabled}
+              ref={thirdButtonRef}
+            />
+          </View>
 
-            <View>
-              <ColorValueButton
-                onPress={handlePress}
-                value={4}
-                isDisabled={isButtonDisabled}
-                ref={fourthButtonRef}
-              />
-            </View>
+          <View>
+            <ColorValueButton
+              onPress={handlePress}
+              value={4}
+              isDisabled={isButtonDisabled}
+              ref={fourthButtonRef}
+            />
           </View>
         </View>
-
-        <View style={styles.fire}>
-          <Image source={Fire} style={styles.image} />
-          <Typography
-            text={userScore}
-            textStyle={styles.scoreText}
-            containerStyle={styles.scoreContainer}
-          />
-        </View>
       </View>
-    </Container>
+
+      <View style={styles.fire}>
+        <Image source={Fire} style={styles.image} />
+        <Typography
+          text={userScore}
+          textStyle={styles.scoreText}
+          containerStyle={styles.scoreContainer}
+        />
+      </View>
+    </View>
   );
 };
