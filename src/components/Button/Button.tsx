@@ -10,6 +10,7 @@ export type ButtonProps = {
   buttonStyle?: ViewStyle;
   textProps: TypographyProps;
   showBorder?: boolean;
+  disabled?: boolean;
 };
 
 export const Button = ({
@@ -18,6 +19,7 @@ export const Button = ({
   buttonStyle,
   textProps,
   showBorder,
+  disabled,
 }: ButtonProps) => {
   const customButtonStyles = StyleSheet.flatten([
     styles.button,
@@ -30,7 +32,8 @@ export const Button = ({
       <TouchableOpacity
         onPress={onPress}
         style={customButtonStyles}
-        testID={testID}>
+        testID={testID}
+        disabled={disabled}>
         <Typography {...textProps} />
       </TouchableOpacity>
     </View>

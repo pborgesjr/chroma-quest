@@ -11,7 +11,7 @@ interface ContainerProps {
   children: ReactNode;
 }
 
-export const Container = ({children}: ContainerProps) => {
+export const ScreenContainer = ({children}: ContainerProps) => {
   const {top, bottom} = useSafeAreaInsets();
 
   return (
