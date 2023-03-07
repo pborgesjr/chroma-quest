@@ -1,8 +1,14 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {Container, Header} from '../components';
+import {Header} from '../components';
+import {
+  AboutScreen,
+  GameScreen,
+  HomeScreen,
+  PauseScreen,
+  SettingsScreen,
+} from '../screens';
 import {RootStackParamList} from '../types';
-import {screens} from './routes';
 
 export const StackNavigator = () => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -12,23 +18,37 @@ export const StackNavigator = () => {
       initialRouteName="Home"
       screenOptions={{
         headerTransparent: true,
+        presentation: 'card',
         header: ({navigation, route}) => (
           <Header title={route.name} onPress={navigation.goBack} />
         ),
       }}>
-      {screens.map(screen => (
-        <Stack.Screen
-          key={screen.name}
-          {...screen}
-          component={undefined}
-          children={props => (
-            <Container>
-              {/**TODO: fix type */}
-              <screen.component {...props} />
-            </Container>
-          )}
-        />
-      ))}
+      {/* {screens.map((screen, index) => <Stack.Screen key={index} {...screen}/>)} */}
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Game"
+        component={GameScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="About"
+        component={AboutScreen}
+        options={{headerShown: true}}
+      />
+      <Stack.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{headerShown: true}}
+      />
+      <Stack.Screen
+        name="Pause"
+        component={PauseScreen}
+        options={{headerShown: false, presentation: 'transparentModal'}}
+      />
     </Stack.Navigator>
   );
 };

@@ -17,7 +17,8 @@ export type RootStackParamList = {
   Home: undefined;
   Game: undefined;
   About: undefined;
-  Settings: SettingsRouteParamsType;
+  Settings?: SettingsRouteParamsType;
+  Pause: undefined;
 };
 
 export type RouteName = keyof RootStackParamList;

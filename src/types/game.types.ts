@@ -19,4 +19,10 @@ export type GameStateType =
   | 'paused'
   | 'computer';
 
+/**
+ * 1 = Top left button
+ * 2 = Top right button
+ * 3 = Bottom left button
+ * 4 = Bottom right button
+ */
 export type ValueColorType = 1 | 2 | 3 | 4;

@@ -37,6 +37,7 @@ export const useGameValues = (
 
   const getNewRandom = useCallback(() => {
     const nextRandomNumber = randomNumber();
+    //TODO: fix type
     setGameValues(prevState => [...prevState, nextRandomNumber]);
     setGameState('replaying');
   }, [setGameValues]);
@@ -87,6 +88,15 @@ export const useGameValues = (
       });
     }
   }, [gameState, gameValues]);
+
+  /**
+   * This useEffect hooks resets the game
+   */
+  useEffect(() => {
+    if (gameState === 'waiting') {
+      restartGame();
+    }
+  }, [gameState]);
 
   return {
     gameValues,

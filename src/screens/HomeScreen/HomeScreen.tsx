@@ -2,7 +2,7 @@ import React from 'react';
 import {Image, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {Typography, Button, Container} from '../../components';
+import {Typography, Button, ScreenContainer} from '../../components';
 import {RootStackParamList, RouteName} from '../../types';
 import {Images} from '../../assets';
 
@@ -19,7 +19,7 @@ export const HomeScreen = ({navigation}: HomeScreenProps) => {
     navigation.navigate(destination);
   };
   return (
-    <Container>
+    <ScreenContainer>
       <View style={styles.alignCenter}>
         <Image source={Logo} style={styles.logo} />
         <Typography
@@ -45,6 +45,6 @@ export const HomeScreen = ({navigation}: HomeScreenProps) => {
           />
         </View>
       </View>
-    </Container>
+    </ScreenContainer>
   );
 };
