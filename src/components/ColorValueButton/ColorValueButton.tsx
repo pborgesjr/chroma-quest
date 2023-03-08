@@ -2,7 +2,7 @@ import React, {memo, forwardRef, useState, useImperativeHandle} from 'react';
 import {Svg, Path} from 'react-native-svg';
 import {Text, Pressable, Vibration} from 'react-native';
 import {COLOR_PALETTE} from '../../theme';
-import {ValueColorType} from '../../types';
+import {AccessibilityType, ValueColorType} from '../../types';
 import {delay} from 'lodash';
 import {
   LIT_ANIMATION_DURATION,
@@ -18,15 +18,18 @@ export type ColorButtonRefType = null | {
 
 type ColorButtonProps = {
   value: ValueColorType;
+  colorType: AccessibilityType;
   isDisabled?: boolean;
   onPress?: (value: ValueColorType) => void;
   useNumbers?: boolean;
 };
 
-//TODO: get color palette using context
 const ColorValueButtonComponent = forwardRef(
-  ({value, isDisabled, onPress, useNumbers}: ColorButtonProps, ref) => {
-    const {primary, secondary} = COLOR_PALETTE.normal[value];
+  (
+    {value, colorType, isDisabled, onPress, useNumbers}: ColorButtonProps,
+    ref,
+  ) => {
+    const {primary, secondary} = COLOR_PALETTE[colorType][value];
 
     const [isLit, setIsLit] = useState(false);
 

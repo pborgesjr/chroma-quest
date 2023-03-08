@@ -11,8 +11,7 @@ export type AccessibilityType =
   | 'normal'
   | 'deuteranopia'
   | 'protanopia'
-  | 'tritanopia'
-  | 'numbers';
+  | 'tritanopia';
 
 export type ConfigContextType = {
   difficulty: DifficultyType;

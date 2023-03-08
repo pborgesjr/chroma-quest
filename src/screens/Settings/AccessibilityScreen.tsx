@@ -33,11 +33,11 @@ export const AccessibilityScreen = ({}) => {
       value: 'tritanopia',
       onPress: () => setAccessibility('tritanopia'),
     },
-    {
+    /*     {
       text: t('accessibilityColor.numbers'),
       value: 'numbers',
       onPress: () => setAccessibility('numbers'),
-    },
+    }, */
   ];
 
   const accessibilityOptionsLength = AccessibilityOptions.length;
@@ -54,9 +54,9 @@ export const AccessibilityScreen = ({}) => {
             ),
           )}
         </ScrollView>
-        {accessibility === 'numbers' && (
+        {/* {accessibility === 'numbers' && (
           <Typography text={t('insteadOfColors')} />
-        )}
+        )} */}
       </View>
     </ScreenContainer>
   );

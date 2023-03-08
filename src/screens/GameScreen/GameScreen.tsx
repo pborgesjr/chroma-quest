@@ -7,7 +7,7 @@ import {
   ScreenContainer,
   Typography,
 } from '../../components';
-import {GameContext} from '../../context';
+import {ConfigContext, GameContext} from '../../context';
 import {useGameValues, useButtonsRefs} from '../../hooks';
 import {RootStackParamList, ValueColorType} from '../../types';
 import {Images} from '../../assets';
@@ -32,6 +32,7 @@ export const GameScreen = ({navigation}: GameScreenProps) => {
 
   const {gameValues, setUserGameValues} = useGameValues(buttonsRefs);
   const {gameState, setGameState} = useContext(GameContext);
+  const {accessibility} = useContext(ConfigContext);
 
   const handlePress = (value: ValueColorType) => {
     setUserGameValues(prevState => [...prevState, value]);
@@ -62,6 +63,7 @@ export const GameScreen = ({navigation}: GameScreenProps) => {
               <ColorValueButton
                 onPress={handlePress}
                 value={1}
+                colorType={accessibility}
                 isDisabled={isButtonDisabled}
                 ref={firstButtonRef}
               />
@@ -70,6 +72,7 @@ export const GameScreen = ({navigation}: GameScreenProps) => {
               <ColorValueButton
                 onPress={handlePress}
                 value={2}
+                colorType={accessibility}
                 isDisabled={isButtonDisabled}
                 ref={secondButtonRef}
               />
@@ -79,6 +82,7 @@ export const GameScreen = ({navigation}: GameScreenProps) => {
               <ColorValueButton
                 onPress={handlePress}
                 value={3}
+                colorType={accessibility}
                 isDisabled={isButtonDisabled}
                 ref={thirdButtonRef}
               />
@@ -88,6 +92,7 @@ export const GameScreen = ({navigation}: GameScreenProps) => {
               <ColorValueButton
                 onPress={handlePress}
                 value={4}
+                colorType={accessibility}
                 isDisabled={isButtonDisabled}
                 ref={fourthButtonRef}
               />
