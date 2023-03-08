@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingLeft: scale(24),
     paddingBottom: scale(24),
-    marginTop: scale(81),
+    marginTop: scale(100),
   },
   button: {
     marginBottom: scale(36),

@@ -3,7 +3,7 @@ import {useTranslation} from 'react-i18next';
 import {Image, View} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
-import {Typography} from '../../components';
+import {ScreenContainer, Typography} from '../../components';
 import {Images} from '../../assets';
 import {RootStackParamList} from '../../types';
 import {testIDs} from '../../constants';
@@ -24,15 +24,17 @@ export const AboutScreen = ({navigation}: AboutScreenProps) => {
   }, [navigation]);
 
   return (
-    <View style={styles.container}>
-      <Typography
-        text={t('aboutTheGame')}
-        textStyle={styles.text}
-        containerStyle={styles.textContainer}
-        textTestID={aboutTheGame}
-      />
+    <ScreenContainer>
+      <View style={styles.container}>
+        <Typography
+          text={t('aboutTheGame')}
+          textStyle={styles.text}
+          containerStyle={styles.textContainer}
+          textTestID={aboutTheGame}
+        />
 
-      <Image source={Heart} style={styles.image} testID={heartImage} />
-    </View>
+        <Image source={Heart} style={styles.image} testID={heartImage} />
+      </View>
+    </ScreenContainer>
   );
 };
