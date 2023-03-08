@@ -24,7 +24,7 @@ export const Header = ({title = '', onPress = () => {}}: HeaderProps) => {
         buttonStyle={styles.button}
       />
       <Typography
-        text={title}
+        text={title.toLowerCase()}
         variation="heading"
         containerStyle={styles.titleContainer}
       />
