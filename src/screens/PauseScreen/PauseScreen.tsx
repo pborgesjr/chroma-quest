@@ -15,7 +15,7 @@ export const PauseScreen = ({navigation}: PauseScreenProps) => {
   const {setGameState} = useContext(GameContext);
 
   const handleRestart = () => {
-    setGameState('waiting');
+    setGameState('initial');
     navigation.goBack();
   };
 

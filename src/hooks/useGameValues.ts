@@ -93,7 +93,7 @@ export const useGameValues = (
    * This useEffect hooks resets the game
    */
   useEffect(() => {
-    if (gameState === 'waiting') {
+    if (gameState === 'initial') {
       restartGame();
     }
   }, [gameState]);
