@@ -15,6 +15,12 @@
         "normal": "normal",
         "hard": "hard",
 
+        "description": {
+        "easy": "easyDescription",
+        "normal": "normalDescription",
+        "hard": "hardDescription"
+        },
+
         "showNumbers": "show numbers",
         "insteadOfColors": "Instead of colors, each button will show a number between 1 and 4",
         "aboutTheGame": "This game was designed and developed by Pedro Borges",

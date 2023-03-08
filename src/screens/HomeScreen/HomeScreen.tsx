@@ -18,6 +18,7 @@ export const HomeScreen = ({navigation}: HomeScreenProps) => {
   const handleNavigate = (destination: RouteName) => {
     navigation.navigate(destination);
   };
+
   return (
     <ScreenContainer>
       <View style={styles.alignCenter}>
@@ -30,17 +31,17 @@ export const HomeScreen = ({navigation}: HomeScreenProps) => {
         />
         <View style={styles.alignCenter}>
           <Button
-            textProps={{text: 'start'}}
+            textProps={{text: t('start')}}
             onPress={() => handleNavigate('Game')}
           />
           <Button
             buttonStyle={styles.marginTopMedium}
-            textProps={{text: 'settings'}}
+            textProps={{text: t('settings')}}
             onPress={() => handleNavigate('Settings')}
           />
           <Button
             buttonStyle={styles.marginTopMedium}
-            textProps={{text: 'about'}}
+            textProps={{text: t('about')}}
             onPress={() => handleNavigate('About')}
           />
         </View>
