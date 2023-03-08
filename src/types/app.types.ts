@@ -1,4 +1,4 @@
-import {Dispatch, ReactNode, SetStateAction} from 'react';
+import {ReactNode} from 'react';
 
 export type AppProviderProps = {
   children: ReactNode;
@@ -16,11 +16,11 @@ export type AccessibilityType =
 
 export type ConfigContextType = {
   difficulty: DifficultyType;
-  setDifficulty: Dispatch<SetStateAction<DifficultyType>>;
+  setDifficulty: (value: DifficultyType) => void;
   accessibility: AccessibilityType;
-  setAccessibility: Dispatch<SetStateAction<AccessibilityType>>;
+  setAccessibility: (value: AccessibilityType) => void;
   language: LanguageType;
-  setLanguage: Dispatch<SetStateAction<LanguageType>>;
+  setLanguage: (value: LanguageType) => void;
 };
 
 export type OptionType = {

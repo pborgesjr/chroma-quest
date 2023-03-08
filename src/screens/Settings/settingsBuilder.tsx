@@ -5,16 +5,16 @@ import {styles} from './styles';
 
 export const renderOption = (
   option: OptionType,
-  storageValue: string,
   isLast: boolean,
+  storageValue?: string,
 ) => {
   return (
     <Button
-      key={option.value}
+      key={option.text}
       textProps={{text: option.text}}
       buttonStyle={StyleSheet.flatten([!isLast && styles.button])}
       onPress={option.onPress}
-      showBorder={option.value === storageValue}
+      showBorder={!!storageValue && option.value === storageValue}
     />
   );
 };

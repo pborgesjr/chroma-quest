@@ -4,6 +4,8 @@ export type RootStackParamList = {
   About: undefined;
   Settings: undefined;
   Difficulty: undefined;
+  Accessibility: undefined;
+  Language: undefined;
   Pause: undefined;
 };
 

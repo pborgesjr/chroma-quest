@@ -26,6 +26,8 @@ export const DifficultyScreen = ({}) => {
     },
   ];
 
+  const difficultyOptionsLength = DifficultyOptions.length;
+
   return (
     <ScreenContainer>
       <View style={styles.container}>
@@ -33,8 +35,8 @@ export const DifficultyScreen = ({}) => {
           {DifficultyOptions?.map((option, index) =>
             renderOption(
               option,
+              index + 1 === difficultyOptionsLength,
               difficulty,
-              index + 1 === DifficultyOptions.length,
             ),
           )}
         </View>

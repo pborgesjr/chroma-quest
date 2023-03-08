@@ -3,9 +3,11 @@ import React from 'react';
 import {Header} from '../components';
 import {
   AboutScreen,
+  AccessibilityScreen,
   DifficultyScreen,
   GameScreen,
   HomeScreen,
+  LanguageScreen,
   PauseScreen,
   SettingsScreen,
 } from '../screens';
@@ -48,6 +50,16 @@ export const StackNavigator = () => {
       <Stack.Screen
         name="Difficulty"
         component={DifficultyScreen}
+        options={{headerShown: true}}
+      />
+      <Stack.Screen
+        name="Accessibility"
+        component={AccessibilityScreen}
+        options={{headerShown: true}}
+      />
+      <Stack.Screen
+        name="Language"
+        component={LanguageScreen}
         options={{headerShown: true}}
       />
       <Stack.Screen
