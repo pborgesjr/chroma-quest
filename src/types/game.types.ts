@@ -1,11 +1,9 @@
 /**
  * * user = It's the player's turn
  *
- * * game over = The player tried to guess a move and lost
- *
  * * replaying = Replaying the computer's sequence
  *
- * * waiting = Initial value, the player did not started the game yet
+ * * initial = Initial value, the player did not started the game yet
  *
  * * paused = The game is paused, the user probably paused the game or lost the focus on the game's window
  *
@@ -13,9 +11,8 @@
  */
 export type GameStateType =
   | 'user'
-  | 'game over'
   | 'replaying'
-  | 'waiting'
+  | 'initial'
   | 'paused'
   | 'computer';
 

@@ -14,6 +14,7 @@ import {Images} from '../../assets';
 import {styles} from './styles';
 import {useTranslation} from 'react-i18next';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {useBackHandler} from '@react-native-community/hooks';
 
 const {Fire} = Images;
 
@@ -47,6 +48,12 @@ export const GameScreen = ({navigation}: GameScreenProps) => {
     gameValues.length > 0 ? (gameValues.length - 1).toString() : '0';
 
   const isButtonDisabled = gameState !== 'user';
+
+  useBackHandler(() => {
+    setGameState('initial');
+    navigation.popToTop();
+    return true;
+  });
 
   return (
     <ScreenContainer>

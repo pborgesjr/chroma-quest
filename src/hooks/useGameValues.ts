@@ -26,7 +26,6 @@ export const useGameValues = (
   };
 
   const handleDefeat = () => {
-    setGameState('game over');
     alertDefeat(restartGame);
   };
 
@@ -37,7 +36,6 @@ export const useGameValues = (
 
   const getNewRandom = useCallback(() => {
     const nextRandomNumber = randomNumber();
-    //TODO: fix type
     setGameValues(prevState => [...prevState, nextRandomNumber]);
     setGameState('replaying');
   }, [setGameValues]);
