@@ -8,9 +8,6 @@ export const styles = StyleSheet.create({
     marginHorizontal: scale(16),
   },
   button: {
-    marginRight: scale(24),
-  },
-  titleContainer: {
-    marginLeft: scale(24),
+    marginRight: scale(16),
   },
 });

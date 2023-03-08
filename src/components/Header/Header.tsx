@@ -23,11 +23,7 @@ export const Header = ({title = '', onPress = () => {}}: HeaderProps) => {
         onPress={onPress}
         buttonStyle={styles.button}
       />
-      <Typography
-        text={title.toLowerCase()}
-        variation="heading"
-        containerStyle={styles.titleContainer}
-      />
+      <Typography text={title.toLowerCase()} variation="body" />
     </View>
   );
 };

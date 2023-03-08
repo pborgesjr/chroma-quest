@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {useTranslation} from 'react-i18next';
-import {View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import {ScreenContainer, Typography} from '../../components';
 import {ConfigContext} from '../../context';
 import {OptionType} from '../../types';
@@ -45,7 +45,7 @@ export const AccessibilityScreen = ({}) => {
   return (
     <ScreenContainer>
       <View style={styles.container}>
-        <View>
+        <ScrollView showsHorizontalScrollIndicator={false}>
           {AccessibilityOptions?.map((option, index) =>
             renderOption(
               option,
@@ -53,7 +53,7 @@ export const AccessibilityScreen = ({}) => {
               accessibility,
             ),
           )}
-        </View>
+        </ScrollView>
         {accessibility === 'numbers' && (
           <Typography text={t('insteadOfColors')} />
         )}
