@@ -4,6 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {ConfigContext} from '../../context';
 import {COLOR_PALETTE} from '../../theme';
+import {isIOS} from '../../utils';
 import {styles} from './styles';
 
 const {
@@ -39,7 +40,7 @@ export const ScreenContainer = ({children}: ContainerProps) => {
         <StatusBar
           backgroundColor="transparent"
           translucent
-          barStyle="dark-content"
+          barStyle={isIOS() ? 'light-content' : 'dark-content'}
         />
         {children}
       </View>
