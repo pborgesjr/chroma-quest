@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {Image, View} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
@@ -16,12 +16,6 @@ type AboutScreenProps = NativeStackScreenProps<RootStackParamList, 'About'>;
 
 export const AboutScreen = ({navigation}: AboutScreenProps) => {
   const {t} = useTranslation();
-
-  useEffect(() => {
-    navigation.setOptions({
-      title: t('about'),
-    });
-  }, [navigation]);
 
   return (
     <ScreenContainer>
