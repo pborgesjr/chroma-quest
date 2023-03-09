@@ -45,8 +45,8 @@ export const COLOR_PALETTE = {
       secondary: '#4A98A4',
     },
     4: {
-      primary: '#c8c7d7',
-      secondary: '#90909E',
+      primary: '#ff9ba4',
+      secondary: '#D47F87',
     },
   },
   protanopia: {
@@ -63,7 +63,7 @@ export const COLOR_PALETTE = {
       secondary: '#8A7A00',
     },
     4: {
-      primary: '#abb2d9',
+      primary: '#759bff',
       secondary: '#5A5D73',
     },
   },
@@ -81,8 +81,8 @@ export const COLOR_PALETTE = {
       secondary: '#AF9166',
     },
     4: {
-      primary: '#b6a2ac',
-      secondary: '#675B60',
+      primary: '#716263',
+      secondary: '#b6a2ac',
     },
   },
   shadow: '#00000073',
