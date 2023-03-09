@@ -8,7 +8,7 @@ https://user-images.githubusercontent.com/28986033/224129663-70ad8928-66d5-4806-
 
 ## Accessibility
 
-It was designed to be accessible for people who have color blindness. The game uses different color palettes to make it easy to differentiate between all buttons. This allows players who have difficulty distinguishing between colors to play the game with ease.
+It was designed to be accessible for people who have color blindness. The game uses different color palettes to make it easy to differentiate between all buttons. This allows players who have difficulty distinguishing between colors to play the game with ease. The following image it's the color palette adopted in the game.
 
 ![color_palette_chromaquest](https://user-images.githubusercontent.com/28986033/224130105-b8e89cf4-a613-49c6-94ff-4878cc749e43.png)
 
