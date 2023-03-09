@@ -19,7 +19,7 @@
         "hard": "hard",
 
         "accessibilityColor": {
-            "normal": "normalVisibion",
+            "normal": "normal",
             "deuteranopia": "deuteranopia",
             "protanopia": "protanopia",
             "tritanopia": "tritanopia",

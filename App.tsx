@@ -1,6 +1,6 @@
 import React from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import {NavigationContainer} from '@react-navigation/native';
-import {SafeAreaView} from 'react-native';
 
 import {ConfigProvider, GameProvider} from './src/context';
 import {StackNavigator} from './src/routes';
