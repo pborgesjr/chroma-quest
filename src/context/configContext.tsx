@@ -6,6 +6,8 @@ import React, {
   useEffect,
   useState,
 } from 'react';
+import i18next from 'i18next';
+
 import {
   ACCESSIBILITY_STORAGE_KEY,
   DEFAULT_ACCESSIBILITY_VALUE,
@@ -56,6 +58,7 @@ export const ConfigProvider = ({children}: AppProviderProps) => {
   const setLanguage = (value: LanguageType) => {
     if (language !== value) {
       setLanguageState(value);
+      i18next.changeLanguage(value);
       set(LANGUAGE_STORAGE_KEY, value);
     }
   };
@@ -67,6 +70,9 @@ export const ConfigProvider = ({children}: AppProviderProps) => {
     const value = (await get(storageKey)) as T | undefined | null;
 
     if (value) {
+      if (storageKey === 'language') {
+        i18next.changeLanguage(value as string);
+      }
       setState(prevState => (prevState === value ? prevState : value));
     }
   };

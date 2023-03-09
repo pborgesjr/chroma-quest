@@ -15,13 +15,17 @@ export const LanguageScreen = ({}) => {
   const LanguageOptions: OptionType[] = [
     {
       text: t('english'),
-      value: 'english',
-      onPress: () => setLanguage('english'),
+      value: 'en',
+      onPress: () => {
+        setLanguage('en');
+      },
     },
     {
       text: t('brazilianPortuguese'),
       value: 'ptBR',
-      onPress: () => setLanguage('ptBR'),
+      onPress: () => {
+        setLanguage('ptBR');
+      },
     },
   ];
 

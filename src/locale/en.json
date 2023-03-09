@@ -10,6 +10,9 @@
         "about": "about",
         "settings": "settings",
 
+        "youLose": "You lose!",
+        "letsPlayAgain": "let's play again?",
+        "playAgain": "play again",
 
         "easy": "easy",
         "normal": "normal",
@@ -24,9 +27,9 @@
         },
 
         "description": {
-            "easy": "easyDescription",
-            "normal": "normalDescription",
-            "hard": "hardDescription"
+            "easy": "- replay occurs at normal speed\n- you have 10 seconds to select a color each turn\n- you can make 1 mistake",
+            "normal": "- replay occurs at normal speed\n- you have 5 seconds to select a color each turn\n- you can’t make any mistakes",
+            "hard": "- replay occurs at a faster speed\n- you have 3 seconds to select a color each turn\n- you still can’t make any mistakes"
         },
 
         "insteadOfColors": "Instead of colors, each button will show a number between 1 and 4",

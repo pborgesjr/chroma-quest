@@ -17,7 +17,8 @@ export const SettingsScreen = ({navigation, route}: SettingsScreenProps) => {
   const {t} = useTranslation();
 
   const SettingsOptions: OptionType[] = [
-    {text: t('difficulty'), onPress: () => navigation.navigate('Difficulty')},
+    //TODO: replace all timers for constants to have an implementation of difficulty into the app
+    /*  {text: t('difficulty'), onPress: () => navigation.navigate('Difficulty')}, */
     {text: t('language'), onPress: () => navigation.navigate('Language')},
     {
       text: t('accessibility'),

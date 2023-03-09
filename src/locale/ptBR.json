@@ -1,43 +1,46 @@
 {
     "translation": {
-        "language": "language",
-        "english": "english",
-        "brazilianPortuguese": "brazilian portuguese",
+        "language": "idioma",
+        "english": "inglês",
+        "brazilianPortuguese": "português BR",
 
-        "difficulty": "difficulty",
-        "accessibility": "accessibility",
-        "scoreboard": "scoreboard",
-        "about": "about",
-        "settings": "settings",
+        "difficulty": "dificuldade",
+        "accessibility": "acessibilidade",
+        "scoreboard": "placar",
+        "about": "sobre",
+        "settings": "opções",
 
+        "youLose": "Você perdeu!",
+        "letsPlayAgain": "vamos jogar novamente?",
+        "playAgain": "jogar novamente",
 
-        "easy": "easy",
+        "easy": "fácil",
         "normal": "normal",
-        "hard": "hard",
+        "hard": "difícil",
 
         "accessibilityColor": {
-            "normal": "normalVisibion",
+            "normal": "visão normal",
             "deuteranopia": "deuteranopia",
             "protanopia": "protanopia",
             "tritanopia": "tritanopia",
-            "numbers": "show numbers"
+            "numbers": "mostrar números"
         },
 
         "description": {
-            "easy": "easyDescription",
-            "normal": "normalDescription",
-            "hard": "hardDescription"
+            "easy": "- replay ocorre em velocidade normal\n- você tem 10 segundos para selecionar a cor em cada turno\n- você pode cometer um erro",
+            "normal": "- replay ocorre em velocidade normal\n- você tem 5 segundos para selecionar a cor em cada turno\n- você não pode cometer nenhum erro",
+            "hard": "- replay ocorre em uma velocidade mais rápida\n- você tem 3 segundos para selecionar a cor em cada turno\n- você continua não podendo cometer nenhum erro"
         },
 
-        "insteadOfColors": "Instead of colors, each button will show a number between 1 and 4",
-        "aboutTheGame": "This game was designed and developed by Pedro Borges",
+        "insteadOfColors": "Ao invés de cores, cada botão irá mostrar um número de 1 a 4",
+        "aboutTheGame": "Este jogo foi projetado e desenvolvido por Pedro Borges",
         "github": "github",
         "linkedin": "linkedin",
-        "pause": "pause",
-        "gameIsPaused": "Game is paused",
-        "continue": "continue",
-        "restart": "restart",
+        "pause": "pausar",
+        "gameIsPaused": "Jogo está pausado",
+        "continue": "continuar",
+        "restart": "recomeçar",
         "appName": "Chroma\nQuest",
-        "start": "start"
+        "start": "jogar"
     }
 }

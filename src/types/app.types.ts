@@ -6,7 +6,7 @@ export type AppProviderProps = {
 
 export type StorageKeyType = 'language' | 'difficulty' | 'accessibility';
 export type DifficultyType = 'easy' | 'normal' | 'hard';
-export type LanguageType = 'english' | 'ptBR';
+export type LanguageType = 'en' | 'ptBR';
 export type AccessibilityType =
   | 'normal'
   | 'deuteranopia'
