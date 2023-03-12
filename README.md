@@ -25,3 +25,7 @@ You can check out the prototype design on [Figma](https://www.figma.com/file/fXi
 ## Contributing
 
 If you find any bugs or want to contribute to the game, feel free to open an issue or a pull request. Any contributions are welcome!
+
+## License
+
+Chroma Quest is available under the MIT License.
