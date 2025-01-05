@@ -6,13 +6,17 @@ import {scale} from '../../utils';
 import {Button} from '../Button/Button';
 
 import {styles} from './styles';
+import {Typography} from '../Typography/Typography';
+import {useTranslation} from 'react-i18next';
 
 type HeaderProps = {
+  route: string;
   onPress?: () => void;
 };
 
-export const Header = ({onPress = () => {}}: HeaderProps) => {
+export const Header = ({onPress = () => {}, route}: HeaderProps) => {
   const {top} = useSafeAreaInsets();
+  const {t} = useTranslation();
 
   return (
     <View style={[styles.container, {marginTop: scale(top)}]}>
@@ -21,6 +25,7 @@ export const Header = ({onPress = () => {}}: HeaderProps) => {
         onPress={onPress}
         buttonStyle={styles.button}
       />
+      <Typography text={t(route.toLowerCase())} />
     </View>
   );
 };

@@ -21,9 +21,12 @@ export const StackNavigator = () => {
       initialRouteName="Home"
       screenOptions={{
         headerTransparent: true,
-        presentation: 'fullScreenModal',
+        statusBarTranslucent: true,
         gestureEnabled: false,
-        header: ({navigation}) => <Header onPress={navigation.goBack} />,
+        presentation: 'card',
+        header: ({navigation, route}) => (
+          <Header onPress={navigation.goBack} route={route.name} />
+        ),
       }}>
       {/* {screens.map((screen, index) => <Stack.Screen key={index} {...screen}/>)} */}
       <Stack.Screen
