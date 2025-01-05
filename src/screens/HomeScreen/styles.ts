@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     marginBottom: scale(48),
   },
   logo: {
-    width: scale(170),
-    height: scale(200),
+    width: scale(150),
+    height: scale(180),
   },
 });

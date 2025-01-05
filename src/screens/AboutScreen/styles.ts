@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
   },
   text: {
     textAlign: 'center',
+    fontSize: scale(16),
   },
   image: {
     width: scale(100),

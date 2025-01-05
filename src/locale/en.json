@@ -33,7 +33,7 @@
         },
 
         "insteadOfColors": "Instead of colors, each button will show a number between 1 and 4",
-        "aboutTheGame": "This game was designed and developed by Pedro Borges",
+        "aboutTheGame": "This game is inspired by the classic game  \"Genius\" and a minigame from Donkey Kong Country 3, where players must repeat a sequence of colors shown by the game.\n\nMake sure to pay attention to the sequence of colors and repeat it correctly. The game will get harder as you progress. Good luck!",
         "github": "github",
         "linkedin": "linkedin",
         "pause": "pause",

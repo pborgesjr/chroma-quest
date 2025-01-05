@@ -9,8 +9,8 @@ import {RootStackParamList} from '../../types';
 import {testIDs} from '../../constants';
 import {styles} from './styles';
 
-const {aboutTheGame, heartImage} = testIDs.screens.about;
-const {Heart} = Images;
+const {aboutTheGame, logoImage} = testIDs.screens.about;
+const {Logo} = Images;
 
 type AboutScreenProps = NativeStackScreenProps<RootStackParamList, 'About'>;
 
@@ -27,7 +27,7 @@ export const AboutScreen = ({navigation}: AboutScreenProps) => {
           textTestID={aboutTheGame}
         />
 
-        <Image source={Heart} style={styles.image} testID={heartImage} />
+        <Image source={Logo} style={styles.image} testID={logoImage} />
       </View>
     </ScreenContainer>
   );

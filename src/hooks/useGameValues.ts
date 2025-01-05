@@ -10,7 +10,9 @@ import {ColorButtonRefType} from '../components';
 import {SWITCH_TURNS_TIME, TIME_BETWEEN_BUTTON_ANIMATIONS} from '../constants';
 import {GameContext} from '../context';
 import {ValueColorType} from '../types';
-import {alertDefeat, randomNumber} from '../utils';
+import {randomNumber} from '../utils';
+import {useTranslation} from 'react-i18next';
+import {Alert} from 'react-native';
 
 export const useGameValues = (
   buttonsRefs: Array<MutableRefObject<ColorButtonRefType>>,
@@ -18,6 +20,7 @@ export const useGameValues = (
   const {gameState, setGameState} = useContext(GameContext);
   const [gameValues, setGameValues] = useState<Array<ValueColorType>>([]);
   const [userGameValues, setUserGameValues] = useState<Array<number>>([]);
+  const {t} = useTranslation();
 
   const restartGame = () => {
     setUserGameValues([]);
@@ -26,7 +29,9 @@ export const useGameValues = (
   };
 
   const handleDefeat = () => {
-    alertDefeat(restartGame);
+    Alert.alert(t('youLose'), t('letsPlayAgain'), [
+      {text: t('playAgain'), onPress: restartGame},
+    ]);
   };
 
   const startNewTurn = () => {

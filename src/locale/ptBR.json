@@ -33,7 +33,7 @@
         },
 
         "insteadOfColors": "Ao invés de cores, cada botão irá mostrar um número de 1 a 4",
-        "aboutTheGame": "Este jogo foi projetado e desenvolvido por Pedro Borges",
+        "aboutTheGame": "Este jogo é inspirado no clássico \"Genius\" e em um minigame de Donkey Kong Country 3, onde os jogadores devem repetir uma sequência de cores mostrada pelo jogo.\n\nPreste atenção na sequência de cores e repita-a corretamente. O jogo ficará mais difícil conforme você avança. Boa sorte!",
         "github": "github",
         "linkedin": "linkedin",
         "pause": "pausar",
