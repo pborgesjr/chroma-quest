@@ -40,7 +40,7 @@ export const ScreenContainer = ({children}: ContainerProps) => {
         <StatusBar
           backgroundColor="transparent"
           translucent
-          barStyle={isIOS() ? 'light-content' : 'dark-content'}
+          barStyle="dark-content"
         />
         {children}
       </View>
