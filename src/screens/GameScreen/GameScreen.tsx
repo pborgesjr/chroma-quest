@@ -9,16 +9,14 @@ import {
 } from '../../components';
 import {ConfigContext, GameContext} from '../../context';
 import {useGameValues, useButtonsRefs} from '../../hooks';
-import {RootStackParamList, ValueColorType} from '../../types';
+import {ValueColorType} from '../../types';
 import {Images} from '../../assets';
 import {styles} from './styles';
 import {useTranslation} from 'react-i18next';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {useBackHandler} from '@react-native-community/hooks';
+import {GameScreenProps} from '../../routes';
 
-const {Fire} = Images;
-
-type GameScreenProps = NativeStackScreenProps<RootStackParamList, 'Game'>;
+const Fire = Images.Fire;
 
 export const GameScreen = ({navigation}: GameScreenProps) => {
   const {t} = useTranslation();

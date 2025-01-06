@@ -40,6 +40,7 @@
         "gameIsPaused": "Jogo está pausado",
         "continue": "continuar",
         "restart": "recomeçar",
+        "quit": "sair",
         "appName": "Chroma\nQuest",
         "start": "jogar"
     }

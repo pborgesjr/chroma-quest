@@ -1,14 +1,11 @@
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {useContext} from 'react';
 import {useTranslation} from 'react-i18next';
 import {View} from 'react-native';
 import {Button, Typography} from '../../components';
 import {GameContext} from '../../context';
-import {RootStackParamList} from '../../types';
+import {PauseScreenProps} from '../../routes';
 
 import {styles} from './styles';
-
-type PauseScreenProps = NativeStackScreenProps<RootStackParamList, 'Pause'>;
 
 export const PauseScreen = ({navigation}: PauseScreenProps) => {
   const {t} = useTranslation();
@@ -26,6 +23,11 @@ export const PauseScreen = ({navigation}: PauseScreenProps) => {
 
   const handleOpenSettings = () => {
     navigation.navigate('Settings');
+  };
+
+  const handleExit = () => {
+    setGameState('initial');
+    navigation.popToTop();
   };
 
   return (
@@ -46,7 +48,12 @@ export const PauseScreen = ({navigation}: PauseScreenProps) => {
           buttonStyle={styles.buttonMargin}
           onPress={handleOpenSettings}
         />
-        <Button textProps={{text: t('restart')}} onPress={handleRestart} />
+        <Button
+          textProps={{text: t('restart')}}
+          onPress={handleRestart}
+          buttonStyle={styles.buttonMargin}
+        />
+        <Button textProps={{text: t('quit')}} onPress={handleExit} />
       </View>
     </View>
   );

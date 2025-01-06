@@ -1,5 +1,5 @@
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Header} from '../components';
 import {
   AboutScreen,
@@ -11,7 +11,7 @@ import {
   PauseScreen,
   SettingsScreen,
 } from '../screens';
-import {RootStackParamList} from '../types';
+import {RootStackParamList} from './routes.types';
 
 export const StackNavigator = () => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -23,12 +23,11 @@ export const StackNavigator = () => {
         headerTransparent: true,
         statusBarTranslucent: true,
         gestureEnabled: false,
-        presentation: 'card',
+        animation: 'slide_from_right',
         header: ({navigation, route}) => (
           <Header onPress={navigation.goBack} route={route.name} />
         ),
       }}>
-      {/* {screens.map((screen, index) => <Stack.Screen key={index} {...screen}/>)} */}
       <Stack.Screen
         name="Home"
         component={HomeScreen}
@@ -67,7 +66,11 @@ export const StackNavigator = () => {
       <Stack.Screen
         name="Pause"
         component={PauseScreen}
-        options={{headerShown: false, presentation: 'transparentModal'}}
+        options={{
+          headerShown: false,
+          animation: 'fade',
+          presentation: 'transparentModal',
+        }}
       />
     </Stack.Navigator>
   );

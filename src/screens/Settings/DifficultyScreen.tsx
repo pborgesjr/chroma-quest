@@ -7,7 +7,7 @@ import {OptionType} from '../../types';
 import {renderOption} from './settingsBuilder';
 import {styles} from './styles';
 
-export const DifficultyScreen = ({}) => {
+export const DifficultyScreen = () => {
   const {t} = useTranslation();
 
   const {difficulty, setDifficulty} = useContext(ConfigContext);

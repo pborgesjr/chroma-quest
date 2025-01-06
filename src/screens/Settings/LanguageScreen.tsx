@@ -7,7 +7,7 @@ import {OptionType} from '../../types';
 import {renderOption} from './settingsBuilder';
 import {styles} from './styles';
 
-export const LanguageScreen = ({}) => {
+export const LanguageScreen = () => {
   const {t} = useTranslation();
 
   const {language, setLanguage} = useContext(ConfigContext);

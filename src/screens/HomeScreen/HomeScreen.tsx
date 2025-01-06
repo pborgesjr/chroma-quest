@@ -1,16 +1,13 @@
 import React from 'react';
 import {Image, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {Typography, Button, ScreenContainer} from '../../components';
-import {RootStackParamList, RouteName} from '../../types';
 import {Images} from '../../assets';
 
 import {styles} from './styles';
+import {HomeScreenProps, RouteName} from '../../routes';
 
 const {Logo} = Images;
-
-type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export const HomeScreen = ({navigation}: HomeScreenProps) => {
   const {t} = useTranslation();

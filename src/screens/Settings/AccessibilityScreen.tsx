@@ -1,13 +1,13 @@
 import React, {useContext} from 'react';
 import {useTranslation} from 'react-i18next';
 import {ScrollView, View} from 'react-native';
-import {ScreenContainer, Typography} from '../../components';
+import {ScreenContainer} from '../../components';
 import {ConfigContext} from '../../context';
 import {OptionType} from '../../types';
 import {renderOption} from './settingsBuilder';
 import {styles} from './styles';
 
-export const AccessibilityScreen = ({}) => {
+export const AccessibilityScreen = () => {
   const {t} = useTranslation();
 
   const {accessibility, setAccessibility} = useContext(ConfigContext);

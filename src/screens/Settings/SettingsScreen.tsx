@@ -1,17 +1,12 @@
 import React from 'react';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {useTranslation} from 'react-i18next';
 import {View} from 'react-native';
 import {ScreenContainer} from '../../components';
-import {OptionType, RootStackParamList} from '../../types';
+import {OptionType} from '../../types';
 
 import {styles} from './styles';
 import {renderOption} from './settingsBuilder';
-
-type SettingsScreenProps = NativeStackScreenProps<
-  RootStackParamList,
-  'Settings'
->;
+import {SettingsScreenProps} from '../../routes';
 
 export const SettingsScreen = ({navigation, route}: SettingsScreenProps) => {
   const {t} = useTranslation();
