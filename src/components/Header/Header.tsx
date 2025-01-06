@@ -1,7 +1,5 @@
 import React from 'react';
 import {View} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {scale} from '../../utils';
 
 import {Button} from '../Button/Button';
 
@@ -15,11 +13,10 @@ type HeaderProps = {
 };
 
 export const Header = ({onPress = () => {}, route}: HeaderProps) => {
-  const {top} = useSafeAreaInsets();
   const {t} = useTranslation();
 
   return (
-    <View style={[styles.container, {marginTop: scale(top)}]}>
+    <View style={styles.container}>
       <Button
         textProps={{text: '<', variation: 'title'}}
         onPress={onPress}

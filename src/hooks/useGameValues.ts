@@ -1,4 +1,3 @@
-import {delay} from 'lodash';
 import {
   useCallback,
   useContext,
@@ -6,21 +5,24 @@ import {
   useState,
   MutableRefObject,
 } from 'react';
+import {delay} from 'lodash';
 import {ColorButtonRefType} from '../components';
 import {SWITCH_TURNS_TIME, TIME_BETWEEN_BUTTON_ANIMATIONS} from '../constants';
 import {GameContext} from '../context';
 import {ValueColorType} from '../types';
 import {randomNumber} from '../utils';
-import {useTranslation} from 'react-i18next';
-import {Alert} from 'react-native';
+import {get, set} from '../storage';
+import {useNavigation} from '@react-navigation/native';
+import {NavigationStack} from '../routes';
 
 export const useGameValues = (
   buttonsRefs: Array<MutableRefObject<ColorButtonRefType>>,
 ) => {
   const {gameState, setGameState} = useContext(GameContext);
   const [gameValues, setGameValues] = useState<Array<ValueColorType>>([]);
+  const [maxScore, setMaxScore] = useState(0);
   const [userGameValues, setUserGameValues] = useState<Array<number>>([]);
-  const {t} = useTranslation();
+  const navigation = useNavigation<NavigationStack>();
 
   const restartGame = () => {
     setUserGameValues([]);
@@ -29,13 +31,17 @@ export const useGameValues = (
   };
 
   const handleDefeat = () => {
-    Alert.alert(t('youLose'), t('letsPlayAgain'), [
-      {text: t('playAgain'), onPress: restartGame},
-    ]);
+    navigation.navigate('Finished', {
+      userScore: (gameValues.length - 1).toString(),
+    });
   };
 
   const startNewTurn = () => {
     setUserGameValues([]);
+    if (maxScore < gameValues.length) {
+      set('score', gameValues.length.toString());
+      setMaxScore(gameValues.length);
+    }
     setGameState('computer');
   };
 
@@ -101,8 +107,20 @@ export const useGameValues = (
     }
   }, [gameState]);
 
+  /**
+   * This useEffect hook is responsible for getting the max score from the storage
+   */
+  useEffect(() => {
+    get('score').then(score => {
+      if (score) {
+        setMaxScore(Number(score));
+      }
+    });
+  }, []);
+
   return {
     gameValues,
+    maxScore,
     userGameValues,
     setGameValues,
     setUserGameValues,

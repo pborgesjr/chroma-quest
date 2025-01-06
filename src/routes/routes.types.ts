@@ -1,4 +1,7 @@
+import {NavigationProp} from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+
+export type NavigationStack = NavigationProp<RootStackParamList>;
 
 export type RootStackParamList = {
   Home: undefined;
@@ -9,6 +12,9 @@ export type RootStackParamList = {
   Accessibility: undefined;
   Language: undefined;
   Pause: undefined;
+  Finished: {
+    userScore: string;
+  };
 };
 
 export type AboutScreenProps = NativeStackScreenProps<
@@ -49,6 +55,11 @@ export type LanguageScreenProps = NativeStackScreenProps<
 export type PauseScreenProps = NativeStackScreenProps<
   RootStackParamList,
   'Pause'
+>;
+
+export type FinishedScreenProps = NativeStackScreenProps<
+  RootStackParamList,
+  'Finished'
 >;
 
 export type RouteName = keyof RootStackParamList;

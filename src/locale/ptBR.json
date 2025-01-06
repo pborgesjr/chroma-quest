@@ -42,6 +42,8 @@
         "restart": "recomeçar",
         "quit": "sair",
         "appName": "Chroma\nQuest",
-        "start": "jogar"
+        "start": "jogar",
+        "score": "Pontuação: {{score}}",
+        "maxScore": "Recorde: {{score}}"
     }
 }

@@ -11,6 +11,7 @@ export const COLOR_PALETTE = {
     whitec4: '#c4c4c4',
     black: '#000',
     darkGrey: '#1D1C1C',
+    darkerGrey: '#0D0D0D',
     blackTransparent: 'rgba(0, 0, 0, 0.88)',
   },
   normal: {

@@ -1,5 +1,4 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import {NavigationContainer} from '@react-navigation/native';
 
 import {ConfigProvider, GameProvider} from './src/context';
@@ -11,9 +10,7 @@ function App(): JSX.Element {
     <NavigationContainer>
       <GameProvider>
         <ConfigProvider>
-          <SafeAreaView style={{flex: 1}}>
-            <StackNavigator />
-          </SafeAreaView>
+          <StackNavigator />
         </ConfigProvider>
       </GameProvider>
     </NavigationContainer>

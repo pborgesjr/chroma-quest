@@ -4,6 +4,7 @@ import {
   HomeScreen,
   PauseScreen,
   SettingsScreen,
+  FinishedScreen,
 } from '../screens';
 
 export const screens = [
@@ -38,6 +39,13 @@ export const screens = [
   {
     name: 'Pause',
     component: PauseScreen,
+    options: {
+      headerShown: false,
+    },
+  },
+  {
+    name: 'Finished',
+    component: FinishedScreen,
     options: {
       headerShown: false,
     },

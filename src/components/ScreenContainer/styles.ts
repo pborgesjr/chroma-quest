@@ -1,10 +1,9 @@
 import {StyleSheet} from 'react-native';
+import {COLOR_PALETTE} from '../../theme';
 
 export const styles = StyleSheet.create({
-  gradient: {
-    height: '100%',
-  },
   wrapper: {
     flex: 1,
+    backgroundColor: COLOR_PALETTE.neutral.darkGrey,
   },
 });

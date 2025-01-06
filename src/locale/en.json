@@ -42,6 +42,8 @@
         "restart": "restart",
         "quit": "quit",
         "appName": "Chroma\nQuest",
-        "start": "start"
+        "start": "start",
+        "score": "Score: {{score}}",
+        "maxScore": "Max Score: {{score}}"
     }
 }

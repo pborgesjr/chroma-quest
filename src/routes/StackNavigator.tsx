@@ -5,6 +5,7 @@ import {
   AboutScreen,
   AccessibilityScreen,
   DifficultyScreen,
+  FinishedScreen,
   GameScreen,
   HomeScreen,
   LanguageScreen,
@@ -20,9 +21,8 @@ export const StackNavigator = () => {
     <Stack.Navigator
       initialRouteName="Home"
       screenOptions={{
-        headerTransparent: true,
+        statusBarStyle: 'light',
         statusBarTranslucent: true,
-        gestureEnabled: false,
         animation: 'slide_from_right',
         header: ({navigation, route}) => (
           <Header onPress={navigation.goBack} route={route.name} />
@@ -66,6 +66,15 @@ export const StackNavigator = () => {
       <Stack.Screen
         name="Pause"
         component={PauseScreen}
+        options={{
+          headerShown: false,
+          animation: 'fade',
+          presentation: 'transparentModal',
+        }}
+      />
+      <Stack.Screen
+        name="Finished"
+        component={FinishedScreen}
         options={{
           headerShown: false,
           animation: 'fade',

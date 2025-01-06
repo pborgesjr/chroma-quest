@@ -2,8 +2,6 @@ import {StyleSheet} from 'react-native';
 import {COLOR_PALETTE} from '../../theme';
 import {scale} from '../../utils';
 
-const IMAGE_SIZE = scale(136);
-
 export const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
@@ -25,20 +23,11 @@ export const styles = StyleSheet.create({
   alignItemsCenter: {
     alignItems: 'center',
   },
-  fire: {
-    position: 'relative',
-  },
-  image: {
-    height: IMAGE_SIZE,
-    width: IMAGE_SIZE,
-  },
-  scoreContainer: {
-    position: 'absolute',
-    bottom: scale(18),
-    width: IMAGE_SIZE,
+  visibileImage: {
+    opacity: 1,
   },
   scoreText: {
-    color: COLOR_PALETTE.neutral.black,
     textAlign: 'center',
+    color: COLOR_PALETTE.neutral.white,
   },
 });

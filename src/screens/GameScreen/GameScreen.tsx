@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {View, Image} from 'react-native';
+import {View} from 'react-native';
 
 import {
   Button,
@@ -10,13 +10,10 @@ import {
 import {ConfigContext, GameContext} from '../../context';
 import {useGameValues, useButtonsRefs} from '../../hooks';
 import {ValueColorType} from '../../types';
-import {Images} from '../../assets';
 import {styles} from './styles';
 import {useTranslation} from 'react-i18next';
 import {useBackHandler} from '@react-native-community/hooks';
 import {GameScreenProps} from '../../routes';
-
-const Fire = Images.Fire;
 
 export const GameScreen = ({navigation}: GameScreenProps) => {
   const {t} = useTranslation();
@@ -29,7 +26,7 @@ export const GameScreen = ({navigation}: GameScreenProps) => {
     thirdButtonRef,
   } = useButtonsRefs();
 
-  const {gameValues, setUserGameValues} = useGameValues(buttonsRefs);
+  const {gameValues, setUserGameValues, maxScore} = useGameValues(buttonsRefs);
   const {gameState, setGameState} = useContext(GameContext);
   const {accessibility} = useContext(ConfigContext);
 
@@ -105,12 +102,14 @@ export const GameScreen = ({navigation}: GameScreenProps) => {
           </View>
         </View>
 
-        <View style={styles.fire}>
-          <Image source={Fire} style={styles.image} />
+        <View>
           <Typography
-            text={userScore}
+            text={t('score', {score: userScore})}
             textStyle={styles.scoreText}
-            containerStyle={styles.scoreContainer}
+          />
+          <Typography
+            text={t('maxScore', {score: maxScore})}
+            textStyle={styles.scoreText}
           />
         </View>
       </View>

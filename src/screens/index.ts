@@ -6,3 +6,4 @@ export * from './Settings/DifficultyScreen';
 export * from './Settings/AccessibilityScreen';
 export * from './Settings/LanguageScreen';
 export * from './PauseScreen/PauseScreen';
+export * from './FinishedScreen/FinishedScreen';
