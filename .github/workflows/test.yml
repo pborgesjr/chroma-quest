@@ -1,4 +1,4 @@
-name: CI
+name: Testing
 on:
   push:
     branches:
@@ -18,6 +18,6 @@ jobs:
           path: node_modules
           key: ${{ env.CACHE_KEY }}-node_modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install Dependencies
-        run: npm ci
+        run: npm i
       - name: Run Tests
         run: npm test
