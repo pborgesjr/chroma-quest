@@ -1,6 +1,6 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
-import {Image, View} from 'react-native';
+import {Image, ScrollView} from 'react-native';
 
 import {ScreenContainer, Typography} from '../../components';
 import {Images} from '../../assets';
@@ -15,7 +15,11 @@ export const AboutScreen = () => {
 
   return (
     <ScreenContainer>
-      <View style={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        overScrollMode="never"
+        showsVerticalScrollIndicator={false}
+        bounces={false}>
         <Typography
           text={t('aboutTheGame')}
           textStyle={styles.text}
@@ -24,7 +28,7 @@ export const AboutScreen = () => {
         />
 
         <Image source={Logo} style={styles.image} testID={logoImage} />
-      </View>
+      </ScrollView>
     </ScreenContainer>
   );
 };

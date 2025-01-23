@@ -3,11 +3,8 @@ import {scale} from '../../utils';
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-between',
-    marginTop: scale(100),
-    marginBottom: scale(24),
+    paddingBottom: scale(24),
   },
   textContainer: {
     maxWidth: scale(290),
@@ -19,5 +16,6 @@ export const styles = StyleSheet.create({
   image: {
     width: scale(100),
     height: scale(100),
+    marginTop: scale(36),
   },
 });
