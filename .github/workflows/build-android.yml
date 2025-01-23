@@ -16,8 +16,8 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          distribution: 'zulu'
-          java-version: '11'
+          distribution: 'oracle'
+          java-version: '17'
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -47,8 +47,8 @@ jobs:
           cd android
           ./gradlew assembleRelease
 
-      - name: Upload Android APK
+      - name: Upload Android AAB
         uses: actions/upload-artifact@v3
         with:
-          name: android-apk
-          path: android/app/build/outputs/apk/release/app-release-unsigned.apk
+          name: android-aab
+          path: android/app/build/outputs/apk/release/app-release.apk
