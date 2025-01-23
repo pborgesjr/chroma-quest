@@ -39,6 +39,9 @@ jobs:
           path: ~/.gradle/caches
           key: gradle-${{ env.CACHE_KEY }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
 
+      - name: Make Gradlew Executable
+        run: cd android && chmod +x ./gradlew
+
       - name: Build Android
         run: |
           cd android
