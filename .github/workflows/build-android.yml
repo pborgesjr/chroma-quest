@@ -45,10 +45,20 @@ jobs:
       - name: Build Android
         run: |
           cd android
-          ./gradlew assembleRelease
+          ./gradlew bundleRelease --no-daemon
 
-      - name: Upload Android AAB
-        uses: actions/upload-artifact@v3
+      - name: Artifact signing
+        uses: r0adkll/sign-android-release@v1
+        id: sign_app
         with:
-          name: android-aab
-          path: android/app/build/outputs/apk/release/app-release.apk
+          releaseDirectory: android/app/build/outputs/bundle/release
+          signingKeyBase64: ${{ secrets.ANDROID_KEYSTORE }}
+          alias: ${{ secrets.ANDROID_KEY_ALIAS }}
+          keyStorePassword: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          keyPassword: ${{ secrets.ANDROID_KEY_PASSWORD }}
+
+      - name: Upload Android Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: chroma-quest.aab
+          path: ${{steps.sign_app.outputs.signedReleaseFile}}
