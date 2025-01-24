@@ -1,97 +1,31 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+<h1 align="center">Chroma Quest</h1>
 
-# Getting Started
+Chroma Quest is a mobile game built using React Native. The game consists of four colored buttons, each turn the one button it's randomized and added to the sequence, the player has to press the buttons in the correct sequence, just like an old game from the 1980's called Genius. The game also keeps track of the high score and the current score.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Preview
 
-## Step 1: Start Metro
+https://user-images.githubusercontent.com/28986033/224129663-70ad8928-66d5-4806-bcff-31c30691f1e3.mp4
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Accessibility
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+It was designed to be accessible for people who have color blindness. The game uses different color palettes to make it easy to differentiate between all buttons. This allows players who have difficulty distinguishing between colors to play the game with ease. The following image it's the color palette adopted in the game.
 
-```sh
-# Using npm
-npm start
+![color_palette_chromaquest](https://user-images.githubusercontent.com/28986033/224130105-b8e89cf4-a613-49c6-94ff-4878cc749e43.png)
 
-# OR using Yarn
-yarn start
-```
+If you have any suggestions for improving the accessibility of the game, please feel free to open an issue or a pull request.
 
-## Step 2: Build and run your app
+## Game Rules
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+The game has four colored buttons - red, green, blue, and yellow. The buttons will light up in a sequence, and the player has to press the buttons in the same sequence. If the player presses the buttons in the correct sequence, the game will add one to the score and play another sequence of buttons. If the player makes a mistake, the game will end.
 
-### Android
+## Design
 
-```sh
-# Using npm
-npm run android
+You can check out the prototype design on [Figma](https://www.figma.com/file/fXikEUFlm72T9fC2a7rCZ1/Chroma-Quest-8-bit?node-id=0%3A1&t=xNjIAgcoCFKDlmd5-1).
 
-# OR using Yarn
-yarn android
-```
+## Contributing
 
-### iOS
+If you find any bugs or want to contribute to the game, feel free to open an issue or a pull request. Any contributions are welcome!
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+## License
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Chroma Quest is available under the MIT License.
