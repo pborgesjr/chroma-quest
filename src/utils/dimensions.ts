@@ -10,5 +10,10 @@ const screenHeight = Dimensions.get('window').height;
 const guidelineBaseWidth = 350;
 const guidelineBaseHeight = 680;
 
-export const scale = (unscaledSize: number) =>
-  (screenWidth / guidelineBaseWidth) * unscaledSize;
+export const scale = (unscaledSize: number) => {
+  if (screenWidth > screenHeight) {
+    return (screenHeight / guidelineBaseHeight) * unscaledSize;
+  } else {
+    return (screenWidth / guidelineBaseWidth) * unscaledSize;
+  }
+};

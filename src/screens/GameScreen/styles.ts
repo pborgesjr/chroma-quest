@@ -13,12 +13,13 @@ export const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
     marginTop: scale(100),
+    gap: scale(36),
   },
   marginRight: {
     marginRight: scale(56),
   },
-  marginBottom: {
-    marginBottom: scale(48),
+  marginTop: {
+    marginTop: scale(36),
   },
   alignItemsCenter: {
     alignItems: 'center',

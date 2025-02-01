@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {View} from 'react-native';
+import {BackHandler, View} from 'react-native';
 
 import {
   Button,
@@ -12,7 +12,6 @@ import {useGameValues, useButtonsRefs} from '../../hooks';
 import {ValueColorType} from '../../types';
 import {styles} from './styles';
 import {useTranslation} from 'react-i18next';
-import {useBackHandler} from '@react-native-community/hooks';
 import {GameScreenProps} from '../../routes';
 
 export const GameScreen = ({navigation}: GameScreenProps) => {
@@ -44,7 +43,7 @@ export const GameScreen = ({navigation}: GameScreenProps) => {
 
   const isButtonDisabled = gameState !== 'user';
 
-  useBackHandler(() => {
+  BackHandler.addEventListener('hardwareBackPress', () => {
     setGameState('initial');
     navigation.popToTop();
     return true;
@@ -61,7 +60,7 @@ export const GameScreen = ({navigation}: GameScreenProps) => {
             disabled={gameState !== 'user'}
           />
           <View style={styles.buttonsContainer}>
-            <View style={[styles.marginRight, styles.marginBottom]}>
+            <View>
               <ColorValueButton
                 onPress={handlePress}
                 value={1}
@@ -69,18 +68,18 @@ export const GameScreen = ({navigation}: GameScreenProps) => {
                 isDisabled={isButtonDisabled}
                 ref={firstButtonRef}
               />
-            </View>
-            <View>
-              <ColorValueButton
-                onPress={handlePress}
-                value={2}
-                colorType={accessibility}
-                isDisabled={isButtonDisabled}
-                ref={secondButtonRef}
-              />
+              <View style={styles.marginTop}>
+                <ColorValueButton
+                  onPress={handlePress}
+                  value={2}
+                  colorType={accessibility}
+                  isDisabled={isButtonDisabled}
+                  ref={secondButtonRef}
+                />
+              </View>
             </View>
 
-            <View style={styles.marginRight}>
+            <View>
               <ColorValueButton
                 onPress={handlePress}
                 value={3}
@@ -88,16 +87,15 @@ export const GameScreen = ({navigation}: GameScreenProps) => {
                 isDisabled={isButtonDisabled}
                 ref={thirdButtonRef}
               />
-            </View>
-
-            <View>
-              <ColorValueButton
-                onPress={handlePress}
-                value={4}
-                colorType={accessibility}
-                isDisabled={isButtonDisabled}
-                ref={fourthButtonRef}
-              />
+              <View style={styles.marginTop}>
+                <ColorValueButton
+                  onPress={handlePress}
+                  value={4}
+                  colorType={accessibility}
+                  isDisabled={isButtonDisabled}
+                  ref={fourthButtonRef}
+                />
+              </View>
             </View>
           </View>
         </View>
