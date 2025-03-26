@@ -1,7 +1,7 @@
 name: Android Build
 on:
   workflow_run:
-    workflows: ['Nome do Workflow Principal']
+    workflows: ['test']
     types:
       - completed
     branches:
