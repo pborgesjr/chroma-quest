@@ -1,4 +1,8 @@
 {
   "name": "chroma_quest",
-  "displayName": "chroma_quest"
+  "extra": {
+    "eas": {
+      "projectId": "32d6c166-ed5f-40a3-8db6-d853e9c7482f"
+    }
+  }
 }
