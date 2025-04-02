@@ -1,8 +1,5 @@
 name: Testing
 on:
-  push:
-    branches:
-      - master
   workflow_dispatch:
 env:
   CACHE_KEY: node-deps
