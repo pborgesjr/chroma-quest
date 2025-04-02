@@ -29,3 +29,6 @@ jobs:
           eas-version: latest
           packager: yarn
           token: ${{ secrets.EAS_EXPO_TOKEN }}
+
+      - name: Build Android
+        run: eas build --platform android --profile preview --non-interactive --no-wait
